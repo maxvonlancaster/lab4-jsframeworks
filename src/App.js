@@ -1,23 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import SongScreen from './SongScreen';
 
 function App() {
+  let songs = [{
+    id: 1,
+    cover: "cover/hay zeleniy hay.jpg",
+    title: "Гай, зелений гай",
+    artist: "Назарій Яремчук",
+  },
+  {
+    id: 2,
+    cover: "cover/Little V. - Red Like Roses, Pt. 2.jpg",
+    title: "Yesterday",
+    artist: "Beetles",
+  }]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> 
+          <SongScreen songs={songs}/>
     </div>
   );
 }
