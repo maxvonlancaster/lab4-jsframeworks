@@ -1,24 +1,19 @@
-import { Link } from "react-router";
+import { useParams } from 'react-router-dom';
+import ReactAudioPlayer from 'react-audio-player';
+import songs from './songs';
 
-function SongScreen(props) {
+function SongScreen() {
+    let { id } = useParams();
+    
+    let song = songs.find(s => s.id === id);
+
     return (
-    <section className="songs"> {
-        props.songs.map(song =>
-            <div className="song" id={song.id}>
-                <Link to={'/media/'} >
-                    <img 
-                    src={song.cover} 
-                    alt={song.title} 
-                    />
-                </Link>
-                <div>{song.title}</div>
-                <div>{song.artist}</div>
-                <img src={song.cover} alt="" />
-                <audio src=""></audio>
-            </div>
-        )   
-    }
-    </section>
+        <div>
+            <img src={song.cover} alt={song.title} />
+            <div>{song.title}</div>
+            <div>{song.artist}</div>
+            <ReactAudioPlayer src={song.audio}/>
+        </div>
     )
 }
 
