@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
+app.use(cors({ origin: 'https://lab4-jsframeworks-production.up.railway.app' }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
