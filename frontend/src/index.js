@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SongScreen from './SongScreen';
+import NotFound from './NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,9 +14,9 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
 
-        <Route path="/song">
-          <Route path=":song" element={<SongScreen />}/>
-        </Route>
+          <Route path="/songs/:id" element={<SongScreen />}/>
+
+          <Route path="*" element={<NotFound />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
