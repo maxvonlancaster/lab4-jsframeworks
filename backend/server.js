@@ -8,12 +8,7 @@ const PORT = 5000;
 const whitelist = ['http://localhost:3000', 'https://lab4-jsframeworks-production.up.railway.app']
 const corsOptions = {
   origin: function (origin, callback) {
-    if (whitelist.includes(origin)) {
       callback(null, true)
-    } else {
-      console.log('origin:', origin, 'not allowed')
-      callback(new Error('Not allowed by CORS'))
-    }
   }
 }
 
